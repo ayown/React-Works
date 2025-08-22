@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+
+@layer components {
+  /* Container adjustments */
+  .container {
+    @apply w-full max-w-[100%] min-h-[100vh];
+  }
+
+  .form-container {
+    @apply w-full max-w-[100%];
+  }
+
+  /* Adjust width of form containers for smaller screens */
+  .sign-in, .sign-up {
+    @apply w-full; /* Full width for mobile */
+  }
+
+  /* For toggle panel, we ensure it works well for mobile */
+  .toggle-panel {
+    @apply px-4 sm:px-8; /* Smaller padding on mobile */
+  }
+
+  .toggle-container {
+    @apply absolute top-0 left-0 w-full md:w-[50%] h-full bg-gradient-to-r from-[#5c6bc0] to-[#512da8];
+  }
+
+  /* Adjust width and height on small screens for the form and toggle container */
+  @media (max-width: 640px) {
+    .container {
+      @apply w-[90%]; /* Keep container centered and narrow */
+    }
+
+    .toggle-container {
+      @apply w-[100%]; /* Take full width for mobile */
+      border-radius: 0;
+    }
+
+    .form-container {
+      @apply w-[100%];
+    }
+
+    .social-icons a {
+      @apply w-10 h-10; /* Smaller social icons */
+    }
+
+    .container button {
+      @apply w-full; /* Full-width button for better UX */
+    }
+  }
+
+  /* Additional responsiveness for toggling elements */
+  @media (max-width: 768px) {
+    .toggle {
+      @apply w-[100%] h-[200%] left-0; /* Full toggle panel width */
+    }
+
+    .toggle-panel {
+      @apply text-center; /* Make text align in center */
+    }
+
+    .sign-in, .sign-up {
+      @apply p-4; /* Padding adjustments */
+    }
+
+    .sign-in h1, .sign-up h1 {
+      @apply text-xl; /* Slightly smaller heading font */
+    }
+  }
+}
+
